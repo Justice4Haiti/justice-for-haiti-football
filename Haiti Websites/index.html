@@ -226,7 +226,73 @@ input {
 
 
 
-<script> 
+<script>
+
+
+
+let signatures = parseInt(localStorage.getItem("signatures")) || 0;
+
+
+
+document.getElementById("count").innerHTML = "Total Signatures: " + signatures;
+
+
+
+function signPetition() {
+
+
+
+    let name = document.getElementById("name").value;
+
+
+
+    if (name == "") {
+
+
+
+        alert("Please enter your name");
+
+
+
+        return;
+
+
+
+    }
+
+
+
+    signatures++;
+
+
+
+    localStorage.setItem("signatures", signatures);
+
+
+
+    document.getElementById("message").innerHTML =
+
+
+
+        "Thank you, " + name + ", for signing the petition! 🇭🇹";
+
+
+
+    document.getElementById("count").innerHTML =
+
+
+
+        "Total Signatures: " + signatures;
+
+
+
+}
+
+
+
+</script>
+
+ 
 
 
 
