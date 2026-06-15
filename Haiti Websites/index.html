@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+
+
+<head>
+
+
+
+<title>Justice for Haiti Football</title>
+
+
+
+<style>
+
+
+
+body {
+
+
+
+    text-align: center;
+
+
+
+    font-family: Arial;
+
+
+
+    background: linear-gradient(to bottom, #0038A8, #ffffff, #D21034);
+
+
+
+}
+
+
+
+.container {
+
+
+
+    background: white;
+
+
+
+    width: 90%;
+
+
+
+    max-width: 650px;
+
+
+
+    margin: 30px auto;
+
+
+
+    padding: 20px;
+
+
+
+    border-radius: 15px;
+
+
+
+}
+
+
+
+img {
+
+
+
+    width: 100%;
+
+
+
+    border-radius: 10px;
+
+
+
+}
+
+
+
+button {
+
+
+
+    background: #0038A8;
+
+
+
+    color: white;
+
+
+
+    padding: 12px 25px;
+
+
+
+    border: none;
+
+
+
+    font-size: 18px;
+
+
+
+    border-radius: 8px;
+
+
+
+    cursor: pointer;
+
+
+
+}
+
+
+
+input {
+
+
+
+    padding: 10px;
+
+
+
+    width: 80%;
+
+
+
+    margin: 10px;
+
+
+
+}
+
+
+
+#message {
+
+
+
+    color: green;
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+#count {
+
+
+
+    color: #D21034;
+
+
+
+    font-size: 24px;
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+
+
+
+
+
+<h2>Sign the Petition</h2>
+
+
+
+<input id="name" placeholder="Enter your name">
+
+
+
+<br>
+
+
+
+<button onclick="signPetition()">Sign Petition</button>
+
+
+
+<p id="message"></p>
+
+
+
+<p id="count">Total Signatures: 0</p>
+
+
+
+</div>
+
+
+
+<script>
+
+
+
+let signatures = localStorage.getItem("signatures") || 0;
+
+
+
+document.getElementById("count").innerHTML =
+
+
+
+"Total Signatures: " + signatures;
+
+
+
+function signPetition() {
+
+
+
+    let name = document.getElementById("name").value;
+
+
+
+    if (name == "") {
+
+
+
+        alert("Please enter your name.");
+
+
+
+        return;
+
+
+
+    }
+
+
+
+    signatures++;
+
+
+
+    localStorage.setItem("signatures", signatures);
+
+
+
+    document.getElementById("message").innerHTML =
+
+
+
+    "Thank you, " + name + ", for signing the petition! 🇭🇹";
+
+
+
+    document.getElementById("count").innerHTML =
+
+
+
+    "Total Signatures: " + signatures;
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
+
+
